@@ -1,6 +1,6 @@
 {
   "id": "drageverything",
-  "title": "Drag Everything",
+  "title": "DragEverything",
   "description": "Make the Player List and Hotbar draggable with persistent positions.",
   "version": "1.2",
   "manifest": "https://github.com/tirzah2/DragEverything/releases/latest/download/module.json",
