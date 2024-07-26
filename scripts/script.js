@@ -1,8 +1,8 @@
 Hooks.once('init', async function() {
-  console.log('DragEverything | Initializing DragEverything module');
+  console.log('drageverything | Initializing drageverything module');
 
   // Register settings for saving positions
-  game.settings.register('DragEverything', 'playerListPosition', {
+  game.settings.register('drageverything', 'playerListPosition', {
     name: 'Player List Position',
     scope: 'client',
     config: false,
@@ -10,7 +10,7 @@ Hooks.once('init', async function() {
     default: {},
   });
 
-  game.settings.register('DragEverything', 'hotbarPosition', {
+  game.settings.register('drageverything', 'hotbarPosition', {
     name: 'Hotbar Position',
     scope: 'client',
     config: false,
@@ -20,7 +20,7 @@ Hooks.once('init', async function() {
 });
 
 Hooks.once('ready', function() {
-  console.log('DragEverything | Ready Hook');
+  console.log('drageverything | Ready Hook');
   
   function makeDraggable(elementId, settingName, handleClass) {
     const element = document.getElementById(elementId);
@@ -37,7 +37,7 @@ Hooks.once('ready', function() {
         });
 
         // Load and apply saved position
-        const savedPosition = game.settings.get('DragEverything', settingName);
+        const savedPosition = game.settings.get('drageverything', settingName);
         if (savedPosition && savedPosition.top !== undefined && savedPosition.left !== undefined) {
           element.style.top = `${savedPosition.top}px`;
           element.style.left = `${savedPosition.left}px`;
@@ -57,7 +57,7 @@ Hooks.once('ready', function() {
           stop: (event, ui) => {
             const position = ui.helper.position();
             // Save the new position
-            game.settings.set('DragEverything', settingName, {
+            game.settings.set('drageverything', settingName, {
               top: position.top,
               left: position.left,
             });
